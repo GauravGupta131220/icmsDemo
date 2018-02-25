@@ -1,0 +1,23 @@
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="project-name">Project Name</label>
+    <input type="text" id="project-name" name="projectName"
+        ngControl="projectName" [(ngModel)]="details.projectName">
+  </div>
+
+  <div>
+    <label for="start-date">Start Date</label>
+    <input type="text" id="start-date" name="startDate"
+        ngControl="startDate" [(ngModel)]="details.startDate">
+  </div>
+
+  <div>
+    <label for="end-date">End Date</label>
+    <input type="text" id="end-date" name="endDate"
+        ngControl="endDate" [(ngModel)]="details.endDate">
+  </div>
+
+  <button type="button" (click)="showDetails()">Submit</button>
+</form>  
+
+<app-root (masterDetail)="getData($event)"></app-root>
